@@ -61,7 +61,7 @@ class App extends React.Component {
       const weatherData = await weatherRes.json();
       console.log(weatherData.daily);
     } catch (err) {
-      console.err(err);
+      console.error(err);
     } finally {
       this.setState({ isLoading: false });
     }
@@ -80,6 +80,7 @@ class App extends React.Component {
           />
         </div>
         <button onClick={this.fetchWeather.bind(this)}>Get weather</button>
+        {this.state.isLoading && <p className="loader">Loading...</p>}
       </div>
     );
   }
