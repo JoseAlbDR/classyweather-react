@@ -40,12 +40,6 @@ class App extends React.Component {
     weather: {},
   };
 
-  constructor(props) {
-    super(props);
-  }
-
-  // async fetchWeather() {
-
   fetchWeather = async () => {
     try {
       this.setState({ isLoading: true });
