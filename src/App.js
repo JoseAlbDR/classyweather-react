@@ -6,6 +6,11 @@ class App extends React.Component {
     this.state = { location: "spain" };
   }
 
+  fetchWeather() {
+    console.log("Loading data...");
+    console.log(this);
+  }
+
   render() {
     return (
       <div className="app">
@@ -18,7 +23,7 @@ class App extends React.Component {
             onChange={(e) => this.setState({ location: e.target.value })}
           />
         </div>
-        <button>Get weather</button>
+        <button onClick={this.fetchWeather.bind(this)}>Get weather</button>
       </div>
     );
   }
