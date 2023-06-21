@@ -34,7 +34,7 @@ function formatDay(dateStr) {
 
 class App extends React.Component {
   state = {
-    location: "",
+    location: "granada",
     isLoading: false,
     displayLocation: "",
     weather: {},
@@ -70,6 +70,10 @@ class App extends React.Component {
   };
 
   setLocation = (e) => this.setState({ location: e.target.value });
+
+  componentDidMount() {
+    this.fetchWeather();
+  }
 
   render() {
     return (
