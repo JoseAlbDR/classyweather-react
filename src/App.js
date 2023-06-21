@@ -44,7 +44,9 @@ class App extends React.Component {
     super(props);
   }
 
-  async fetchWeather() {
+  // async fetchWeather() {
+
+  fetchWeather = async () => {
     try {
       this.setState({ isLoading: true });
       // 1) Getting location (geocoding)
@@ -71,7 +73,7 @@ class App extends React.Component {
     } finally {
       this.setState({ isLoading: false });
     }
-  }
+  };
 
   render() {
     return (
@@ -85,7 +87,7 @@ class App extends React.Component {
             onChange={(e) => this.setState({ location: e.target.value })}
           />
         </div>
-        <button onClick={this.fetchWeather.bind(this)}>Get weather</button>
+        <button onClick={this.fetchWeather}>Get weather</button>
         {this.state.isLoading && <p className="loader">Loading...</p>}
         {this.state.weather.weathercode && (
           <Weather
