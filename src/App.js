@@ -95,7 +95,7 @@ class App extends React.Component {
           location={this.state.location}
           onChangeLocation={this.setLocation}
         />
-        <button onClick={this.fetchWeather}>Get weather</button>
+
         {this.state.isLoading && <p className="loader">Loading...</p>}
         {this.state.weather.weathercode && (
           <Weather
@@ -126,6 +126,8 @@ class Input extends React.Component {
 }
 
 class Weather extends React.Component {
+  componentWillUnmount() {}
+
   render() {
     const {
       temperature_2m_max: max,
